@@ -4,11 +4,10 @@
 }
 
 .intro-container{
-    max-height: 500px;
+
 }
 
 .intro-full-width{
-    /*background-color: #767B91;*/
     background-color: #e6ebef;
 }
 
@@ -20,4 +19,5 @@
 .avatar{
     height: 300px;
     padding-top: 3%;
+    margin-left: 25%
 }

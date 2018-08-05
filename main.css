@@ -2,3 +2,22 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
+
+.intro-container{
+    max-height: 500px;
+}
+
+.intro-full-width{
+    /*background-color: #767B91;*/
+    background-color: #e6ebef;
+}
+
+.intro h1{
+    font-size: 4.4rem;
+    font-weight: 850;
+}
+
+.avatar{
+    height: 300px;
+    padding-top: 3%;
+}

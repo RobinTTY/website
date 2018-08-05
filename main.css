@@ -8,7 +8,7 @@
 }
 
 .intro h1{
-    font-size: 4.4rem;
+    font-size: 4rem;
     font-weight: 850;
 }
 
@@ -17,3 +17,26 @@
     padding-top: 3%;
     margin-left: 25%
 }
+
+@media (max-width: 991.98px) { 
+    .intro h1{
+        padding-top: 3%;
+        font-size: 2.4rem;
+        font-weight: 850;
+    }
+    .intro h2{
+        font-size: 1.6rem;
+    }
+ }
+
+ @media (min-width: 576px) and (max-width: 770px) {
+    .intro h2{
+        font-size: 1.4rem;
+    }
+ }
+
+ @media (max-width: 575.98px) { 
+    .intro h2{
+        font-size: 1.2rem;
+    }
+ }

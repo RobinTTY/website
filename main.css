@@ -3,11 +3,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.intro-full-width{
-    background-color: #e6ebef;
-}
-
-.intro h1{
+h1{
     font-size: 4rem;
     font-weight: 850;
 }
@@ -18,25 +14,29 @@
     margin-left: 25%
 }
 
+.bg-grey{
+    background-color: #e6ebef;
+}
+
 @media (max-width: 991.98px) { 
-    .intro h1{
+    h1{
         padding-top: 3%;
         font-size: 2.4rem;
         font-weight: 850;
     }
-    .intro h2{
+    h2{
         font-size: 1.6rem;
     }
  }
 
  @media (min-width: 576px) and (max-width: 770px) {
-    .intro h2{
+    h2{
         font-size: 1.4rem;
     }
  }
 
  @media (max-width: 575.98px) { 
-    .intro h2{
+    h2{
         font-size: 1.2rem;
     }
  }

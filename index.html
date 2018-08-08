@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="shortcut icon" href="resources/favicon-96x96.png">
+    <link rel="shortcut icon" href="resources/favicon-96x96.ico">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <title>Robin Mueller</title>
 </head>
@@ -75,24 +75,33 @@
                         </p>
                     </div>
                     <div class="col-md-5 col-sm-5 d-none d-sm-block">
-                        <img src="resources/avatar.png" id="avatar" class="img-fluid img-about" alt="Robin Mueller Avatar">
+                        <picture>
+                            <source srcset="resources/avatar.webp" type="image/webp">
+                            <source srcset="resources/avatar.jpg" type="image/jpeg">
+                            <img src="resources/avatar.jpg" id="avatar" class="img-fluid img-about" alt="Robin Mueller Avatar">
+                        </picture>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid bg-light c2">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <img src="resources/curr_work.webp" id="curr-work" class="img-fluid float-left img-about" alt="Laptop on a Desk">
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 text-center my-5 content-area-a">
-                        <h2>
-                            What I'm currently working on<br>
-                            <small class="text-muted"> </small>
-                        </h2>
-                    </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <picture>
+                        <source srcset="resources/curr_work.webp" type="image/webp">
+                        <source srcset="resources/curr-work.jpg" type="image/jpeg">
+                        <img src="resources/curr-work.jpg" id="curr-work" class="img-fluid float-left img-about" alt="Laptop on a Desk">
+                    </picture>
                 </div>
-            </div>  
+                <div class="col-md-6 col-sm-6 col-xs-6 text-center my-5 content-area-a">
+                    <h2>
+                        What I'm currently working on
+                        <br>
+                        <small class="text-muted"> </small>
+                    </h2>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

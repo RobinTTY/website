@@ -12,8 +12,12 @@ h1{
     max-height: 350px;
 }
 
-.c2{
+.cont2{
     padding: 0;
+}
+
+.btn-latest{
+    margin: 2% 0;
 }
 
 .bg-grey{
@@ -22,7 +26,7 @@ h1{
 
 #avatar{
     padding-top: 8%;
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 @media (max-width: 991.98px) { 

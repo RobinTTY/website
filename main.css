@@ -8,10 +8,13 @@ h1{
     font-weight: 850;
 }
 
-.avatar{
-    max-height: 350px;
-    padding-top: 3%;
+#avatar{
+    padding-top: 8%;
     margin-left: 20%;
+}
+
+.img-about{
+    max-height: 350px;
 }
 
 .bg-grey{

@@ -12,7 +12,7 @@ h1{
     max-height: 450px;
 }
 
-.btn-latest{
+.content-area > button{
     margin: 2% 0;
     font-size: 1.4rem;
 }
@@ -31,21 +31,47 @@ h1{
     margin-left: -15px;
 }
 
+@media (min-width: 1600px) {
+    .content-area{
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 1599.98px) {
+    .content-area{
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .content-area{
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 991.98px) { 
     h1{
         padding-top: 3%;
-        font-size: 2.4rem;
-        font-weight: 850;
+        font-size: 3rem;
     }
     h2{
         font-size: 1.4rem;
     }
-    .btn-latest{
+    .content-area{
+        font-size: 1.6rem;
+    }
+    .content-area > small{
+        font-size: 1.2rem;
+    }
+    .content-area > button{
         font-size: 1.0rem;
     }
  }
 
  @media (min-width: 576px) and (max-width: 770px) {
+    h1{
+        font-size: 2.4rem;
+    }
     h2{
         font-size: 1.2rem;
     }

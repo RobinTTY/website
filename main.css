@@ -9,11 +9,7 @@ h1{
 }
 
 .img-about{
-    max-height: 350px;
-}
-
-.cont2{
-    padding: 0;
+    max-height: 450px;
 }
 
 .btn-latest{
@@ -27,6 +23,11 @@ h1{
 #avatar{
     padding-top: 8%;
     margin-left: 25%;
+    max-height: 350px;
+}
+
+#curr-work{
+    margin-left: -15px;
 }
 
 @media (max-width: 991.98px) { 

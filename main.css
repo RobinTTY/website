@@ -17,6 +17,10 @@ h1{
     font-size: 1.4rem;
 }
 
+.ignore-std-padding{
+    margin-left: -15px;
+}
+
 .bg-grey{
     background-color: #e6ebef;
 }
@@ -25,10 +29,6 @@ h1{
     padding-top: 8%;
     margin-left: 25%;
     max-height: 350px;
-}
-
-#curr-work{
-    margin-left: -15px;
 }
 
 @media (min-width: 1600px) {

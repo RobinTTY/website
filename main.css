@@ -14,6 +14,7 @@ h1{
 
 .btn-latest{
     margin: 2% 0;
+    font-size: 1.4rem;
 }
 
 .bg-grey{
@@ -38,6 +39,9 @@ h1{
     }
     h2{
         font-size: 1.4rem;
+    }
+    .btn-latest{
+        font-size: 1.0rem;
     }
  }
 

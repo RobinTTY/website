@@ -19,6 +19,7 @@ h1{
 
 .ignore-std-padding{
     margin-left: -15px;
+    margin-right: -15px;
 }
 
 .bg-grey{
@@ -77,6 +78,15 @@ h1{
     }
     p{
         font-size: 1rem;
+    }
+    .content-area{
+        font-size: 1.2em;
+    }
+    .content-area > small{
+        font-size: 1rem;
+    }
+    .content-area > button{
+        font-size: 0.8rem;
     }
  }
 

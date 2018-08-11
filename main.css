@@ -17,6 +17,10 @@ h1{
     font-size: 1.4rem;
 }
 
+.section-a > span > small{
+    color: #6c757d;
+}
+
 .ignore-std-padding{
     margin-left: -15px;
     margin-right: -15px;
@@ -93,5 +97,14 @@ h1{
  @media (max-width: 575.98px) { 
     p{
         font-size: .85rem;
+    }
+    .section-a{
+        background-image: url("resources/curr-work.jpg");
+        color: #f8f9fa;
+        font-weight: 750;
+    }
+    .section-a > span > small{
+        color: #f8f9fa;
+        font-weight: 750;
     }
  }

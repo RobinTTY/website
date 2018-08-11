@@ -109,9 +109,10 @@ h1{
         color: #f8f9fa;
         font-weight: 550;
     }
-    .content-area > button{
+    .section-a > span > button{
         color: #f8f9fa;
         font-weight: 550;
         border-color:  #f8f9fa;
+        text-shadow: 0 0 5px black;
     }
  }

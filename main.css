@@ -17,10 +17,6 @@ h1{
     font-size: 1.4rem;
 }
 
-.section-a *{
-    text-shadow: 0 0 5px black;
-}
-
 .section-a > span > small{
     color: #6c757d;
 }
@@ -105,6 +101,7 @@ h1{
     }
     /* Usage of .section-a to access child elements since these style selectors are specific to only one section */
     .section-a{
+        text-shadow: 0 0 5px black;
         background-image: url("resources/curr-work.jpg");
         color: #f8f9fa;
         font-weight: 750;

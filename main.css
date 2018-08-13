@@ -112,21 +112,22 @@ h1{
     p{
         font-size: .85rem;
     }
+    .xs-img-overlay{
+        font-weight: 750;
+        padding: 4% 0;
+    }
+    .xs-img-overlay *{
+        font-weight: 550;
+    }
     /* Usage of #section-a to access child elements since these style selectors are specific to only one section */
     #section-a{
         text-shadow: 0 0 5px black;
         background-image: url("resources/curr-work.jpg");
-        color: #f8f9fa;
-        font-weight: 750;
-        padding: 4% 0;
     }
-    #section-a > span > small{
+    #section-a *{
         color: #f8f9fa;
-        font-weight: 550;
     }
     #section-a > span > button{
-        color: #f8f9fa;
-        font-weight: 550;
         border-color:  #f8f9fa;
     }
  }

@@ -17,6 +17,10 @@ h1{
     color: #6c757d;
 }
 
+.section-b{
+    padding: 5% 0;
+}
+
 .img-about{
     max-height: 450px;
 }

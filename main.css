@@ -100,9 +100,6 @@ h1{
         font-size: 1rem;
         margin-top: 2%;
     }
-    #section-b{
-
-    }
     #intro-text{
         font-size: 0.9rem;
     }
@@ -113,21 +110,23 @@ h1{
         font-size: .85rem;
     }
     .xs-img-overlay{
+        text-shadow: 0 0 5px black;
         font-weight: 750;
         padding: 4% 0;
     }
     .xs-img-overlay *{
         font-weight: 550;
+        text-shadow: 0 0 3px black;
+        color: #f8f9fa !important; 
     }
-    /* Usage of #section-a to access child elements since these style selectors are specific to only one section */
+    .xs-img-overlay > span > button{
+        border-color:  #f8f9fa;
+    }
     #section-a{
-        text-shadow: 0 0 5px black;
         background-image: url("resources/curr-work.jpg");
     }
-    #section-a *{
-        color: #f8f9fa;
-    }
-    #section-a > span > button{
-        border-color:  #f8f9fa;
+
+    #section-b{
+        background-image: url("resources/resume.jpg");
     }
  }

@@ -22,7 +22,11 @@ h1{
 }
 
 .footer{
-    padding: 3% 3%;
+    padding: 3% 0;
+}
+
+.footer-links > li{
+    padding: 0 0.5%;
 }
 
 .ignore-std-padding{

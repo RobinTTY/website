@@ -36,7 +36,6 @@ h1{
 
 #avatar{
     padding-top: 8%;
-    margin-left: 25%;
     max-height: 350px;
 }
 
@@ -77,6 +76,9 @@ h1{
     }
     #intro-text{
         font-size: 1rem;
+    }
+    #avatar{
+        max-height: 290px;
     }
  }
 

@@ -126,6 +126,9 @@ h1{
     #footer-image-credit-wrapper > a{
         font-size: 0.62rem;
     }
+    #avatar{
+        max-height: 270px;
+    }
  }
 
  @media (max-width: 575.98px) { 
@@ -138,8 +141,8 @@ h1{
         padding: 4% 0;
     }
     .xs-img-overlay *{
-        font-weight: 550;
-        text-shadow: 0 0 3px black;
+        font-weight: 575;
+        text-shadow: 0 0 8px black;
         color: #f8f9fa !important; 
     }
     .xs-img-overlay > span > .btn{

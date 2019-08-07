@@ -4,12 +4,16 @@
 }
 
 body{
-	height: 100vh;
+    min-height: 100vh;
 }
 
 h1{
     font-size: 4rem;
     font-weight: 850;
+}
+
+.flex-fill{
+    flex: 1 1 auto;
 }
 
 .content-area > .btn{
@@ -46,6 +50,10 @@ h1{
     background-color: #e6ebef;
 }
 
+#C404{
+    padding: 2%;
+}
+
 #intro-text{
     font-size: 1.3rem;
 }
@@ -57,9 +65,6 @@ h1{
 
 #footer{
     padding: 3% 3%;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
 
 #footer-image-credit-wrapper > a{
@@ -172,8 +177,9 @@ h1{
         text-align: center;
     }
     .footer-links{
-        margin-top: 2%;
         text-align: center;
+        margin-bottom: 0;
+        margin-top: 1%;
     }
     #section-a{
         background-image: url("/assets/images/curr-work.jpg");

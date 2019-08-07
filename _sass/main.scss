@@ -2,46 +2,71 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
+
+body{
+    min-height: 100vh;
+}
+
 h1{
     font-size: 4rem;
     font-weight: 850;
 }
+
+.flex-fill{
+    flex: 1 1 auto;
+}
+
 .content-area > .btn{
     margin: 2% 0;
     font-size: 1.4rem;
 }
+
 .content-area > small{
     color: #6c757d;
 }
+
 .img-about{
     max-height: 450px;
 }
-.footer{
-    padding: 3% 3%;
-}
+
 .footer-links{
     text-align: right;
 }
+
 .footer-links > li{
     padding: 0 0.5%;
 }
+
 .footer-links > li > a{
     color: #6c757d;
 }
+
 .ignore-std-padding{
     margin-left: -15px;
     margin-right: -15px;
 }
+
 .bg-grey{
     background-color: #e6ebef;
 }
+
+#C404{
+    padding: 2%;
+}
+
 #intro-text{
     font-size: 1.3rem;
 }
+
 #avatar{
     padding-top: 8%;
     max-height: 350px;
 }
+
+#footer{
+    padding: 3% 3%;
+}
+
 #footer-image-credit-wrapper > a{
     background-color: grey;
     color: white;
@@ -117,7 +142,7 @@ h1{
         font-size: 1rem;
         margin-top: 2%;
     }
-    .footer{
+    #footer{
         font-size: 0.8rem;
     }
     #intro-text{
@@ -152,14 +177,15 @@ h1{
         text-align: center;
     }
     .footer-links{
-        margin-top: 2%;
         text-align: center;
+        margin-bottom: 0;
+        margin-top: 1%;
     }
     #section-a{
-        background-image: url("resources/curr-work.jpg");
+        background-image: url("/assets/images/curr-work.jpg");
     }
     #section-b{
-        background-image: url("resources/resume.jpg");
+        background-image: url("/assets/images/resume.jpg");
     }
     #footer-image-credit-wrapper{
         white-space: nowrap;

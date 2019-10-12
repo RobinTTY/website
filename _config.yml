@@ -25,7 +25,7 @@ twitter:
 # end seo tags
 
 baseurl: ""
-url: https://RobinTTY.github.io # the base hostname & protocol for the site
+url: https://RobinTTY.github.io
 twitter_username: Robin_tty
 github_username:  RobinTTY
 
@@ -35,19 +35,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# default layout settings
+# Default layout settings
 defaults:
   - scope:
       path: ""
@@ -63,3 +51,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Collections
+collections:
+  - projects

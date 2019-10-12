@@ -1,0 +1,16 @@
+---
+title: Projects
+---
+<div class="container">
+    {% assign sortedPages = site.projects | sort:"order" %}
+    {% for project in sortedPages %}
+    <div class="card" style="width:50%">
+        <img src="assets/images/Twitter_Social_Icon_Circle_Color.png" class="card-img-top" alt="test">
+        <div class="card-body">
+            <h3 class="card-title">{{ project.name }}</h3>
+            <p class="card-text text-muted">{{ project.description }}</p>
+            <a href="#" class="btn btn-primary">Some Link</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

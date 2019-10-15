@@ -37,11 +37,11 @@ plugins:
 
 # Default layout settings
 defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
+  # - scope:
+  #     path: ""
+  #     type: "projects"
+  #   values:
+  #     layout: "project"
   - scope:
       path: ""
       type: "posts"

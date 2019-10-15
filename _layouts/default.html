@@ -16,11 +16,12 @@
 
 <body class="d-flex flex-column">
     {% include navigation.html %}
-
-    <div id="main-content" class="container-fluid flex-fill p-0 {% if page.mainContentCenterVert %}d-flex align-items-center{% endif %}">
+    <div id="main-content"
+        class="container-fluid flex-fill p-0 {% if page.mainContentCenterVert %}d-flex align-items-center{% endif %}">
         {{ content }}
     </div>
     {% include footer.html %}
+
     <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>

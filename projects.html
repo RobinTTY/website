@@ -9,7 +9,7 @@ title: Projects
         <!-- picture name == front matter picture variable name                 -->
         <picture>
             {% capture projectPicture %}images/{{ project.picture }}{% endcapture %}
-            {% for image in site.static_files %}                
+            {% for image in site.static_files %}
                 {% if image.path contains projectPicture %}
                     {% if image.extname == '.webp' %}
                         <source srcset="{{ site.baseurl }}{{ image.path }}">
@@ -19,7 +19,7 @@ title: Projects
                     {% endif %}
                 {% endif %}
             {% endfor %}
-            <img src={{imgCapture}} class="card-img-top" alt="project-picture">            
+            <img src={{imgCapture}} class="card-img-top" alt="project-picture">
         </picture>
         <div class="card-body">
             <h3 class="card-title">{{ project.name }}</h3>

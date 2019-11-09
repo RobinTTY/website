@@ -8,21 +8,15 @@
 	</button>
 	<div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
+			<li class="nav-item {% if page.title == "Home" %}active{% endif %}">
 				<a class="nav-link" href="/">Home
 					<span class="sr-only">(current)</span>
 				</a>
 			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
-					Projects
+			<li class="nav-item">
+				<a class="nav-link {% if page.title == "Projects" %}active{% endif %}" href="/projects">Projects
+					<span class="sr-only">(current)</span>
 				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="https://github.com/RobinTTY/StructureMonitoring">Structure Monitoring</a>
-					<a class="dropdown-item" href="https://github.com/RobinTTY/BME680">Bme680 Sensor Driver</a>
-					<a class="dropdown-item" href="https://github.com/RobinTTY/BH1745">Bh1745 Sensor Driver</a>
-				</div>
 			</li>
 		</ul>
 	</div>

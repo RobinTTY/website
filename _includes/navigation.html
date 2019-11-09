@@ -10,12 +10,16 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item {% if page.title == "Home" %}active{% endif %}">
 				<a class="nav-link" href="/">Home
-					<span class="sr-only">(current)</span>
+					{% if page.title == "Home" %}
+						<span class="sr-only">(current)</span>
+					{% endif %}
 				</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link {% if page.title == "Projects" %}active{% endif %}" href="/projects">Projects
-					<span class="sr-only">(current)</span>
+			<li class="nav-item {% if page.title == "Projects" %}active{% endif %}">
+				<a class="nav-link" href="/projects">Projects
+					{% if page.title == "Projects" %}
+						<span class="sr-only">(current)</span>
+					{% endif %}
 				</a>
 			</li>
 		</ul>

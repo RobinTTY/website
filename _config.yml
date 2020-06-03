@@ -11,7 +11,7 @@ email: muellerobin95@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
     I'm a Software Engineering student and this is where I share my work.
 google_site_verification: oHIsmf8qP2_qzV2ABlKZanK4Z4Jw5Xyfrcu0I5W4Uuo
-logo: assets/images/favicon-96x96.png
+logo: /assets/images/favicon-96x96.png
 # TODO: LinkedIn
 social:
     name: Robin Mueller
@@ -55,3 +55,4 @@ defaults:
 # Collections
 collections:
   - projects
+  - about

@@ -8,21 +8,26 @@
 	</button>
 	<div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
+			<li class="nav-item {% if page.title == "Home" %}active{% endif %}">
 				<a class="nav-link" href="/">Home
-					<span class="sr-only">(current)</span>
+					{% if page.title == "Home" %}
+						<span class="sr-only">(current)</span>
+					{% endif %}
 				</a>
 			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
-					Projects
+			<li class="nav-item {% if page.title == "Projects" %}active{% endif %}">
+				<a class="nav-link" href="/projects">Projects
+					{% if page.title == "Projects" %}
+						<span class="sr-only">(current)</span>
+					{% endif %}
 				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="https://github.com/RobinTTY/StructureMonitoring">Structure Monitoring</a>
-					<a class="dropdown-item" href="https://github.com/RobinTTY/BME680">Bme680 Sensor Driver</a>
-					<a class="dropdown-item" href="https://github.com/RobinTTY/BH1745">Bh1745 Sensor Driver</a>
-				</div>
+			</li>
+			<li class="nav-item {% if page.title == "About" %}active{% endif %}">
+				<a class="nav-link" href="/about">About
+					{% if page.title == "About" %}
+						<span class="sr-only">(current)</span>
+					{% endif %}
+				</a>
 			</li>
 		</ul>
 	</div>
@@ -30,17 +35,17 @@
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
 				<a class="nav-link" href="mailto:muellerobin95@gmail.com" title="Contact Me">
-					<img src="assets/images/contact-32px.png" width="26" height="26" alt="Email Image">
+					<img src="/assets/images/contact-32px.png" width="26" height="26" alt="Email Image">
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="https://github.com/RobinTTY" target="_blank" rel="noopener" title="GitHub">
-					<img src="assets/images/GitHub-Mark-32px.png" width="26" height="26" alt="Github Brand Image">
+					<img src="/assets/images/GitHub-Mark-32px.png" width="26" height="26" alt="Github Brand Image">
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="https://twitter.com/Robin_tty" target="_blank" rel="noopener" title="Twitter">
-					<img src="assets/images/Twitter_Social_Icon_Circle_Color.png" width="26" height="26" alt="Twitter Brand Image">
+					<img src="/assets/images/Twitter_Social_Icon_Circle_Color.png" width="26" height="26" alt="Twitter Brand Image">
 				</a>
 			</li>
 		</ul>

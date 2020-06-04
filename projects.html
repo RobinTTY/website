@@ -1,0 +1,37 @@
+---
+title: Projects
+---
+<div class="container">
+    <div class="row">
+        <div class="card-deck">
+            {% assign sortedPages = site.projects | sort:"order" %}
+            {% for project in sortedPages %}
+            <div class="card project-card my-3">
+                <!-- automatically searches the projects folder for all pictures with   -->
+                <!-- picture name == front matter picture variable name                 -->
+                <picture>
+                    {% capture projectPicture %}images/{{ project.picture }}{% endcapture %}
+                    {% for image in site.static_files %}
+                        {% if image.path contains projectPicture %}
+                            {% if image.extname == '.webp' %}
+                                <source srcset="{{ site.baseurl }}{{ image.path }}">
+                            {% endif %}
+                            {% if image.extname != '.webp' %}
+                                {% capture imgCapture %}{{ site.baseurl }}{{ image.path }}{% endcapture %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <img src={{ imgCapture }} id="project-image" class="card-img-top" alt="project-picture">
+                </picture>
+                <div class="card-body">
+                    <h3 class="card-title">{{ project.name }}</h3>
+                    <p class="card-text text-muted">{{ project.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href={{ project.link }} class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

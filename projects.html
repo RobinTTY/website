@@ -27,9 +27,9 @@ title: Projects
                     <h3 id="project-title" class="card-title">{{ project.name }}</h3>
                     <p class="card-text text-muted">{{ project.description }}</p>
                 </div>
-                <div class="card-footer">
-                    <a href={{ project.link }} class="btn btn-primary">Visit</a>
-                </div>
+                <a href={{ project.link }} class="card-footer btn btn-info project-card-footer">
+                    Project Page
+                </a>
             </div>
             {% endfor %}
         </div>

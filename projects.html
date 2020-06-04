@@ -3,10 +3,10 @@ title: Projects
 ---
 <div class="container">
     <div class="row">
-        <div class="card-deck">
+        <div class="card-deck p-3">
             {% assign sortedPages = site.projects | sort:"order" %}
             {% for project in sortedPages %}
-            <div class="card project-card my-3">
+            <div id="project-card" class="card">
                 <!-- automatically searches the projects folder for all pictures with   -->
                 <!-- picture name == front matter picture variable name                 -->
                 <picture>
@@ -21,10 +21,10 @@ title: Projects
                             {% endif %}
                         {% endif %}
                     {% endfor %}
-                    <img src={{ imgCapture }} id="project-image" class="card-img-top" alt="project-picture">
+                    <img src={{ imgCapture }} class="card-img-top" alt="project-picture">
                 </picture>
                 <div class="card-body">
-                    <h3 class="card-title">{{ project.name }}</h3>
+                    <h3 id="project-title" class="card-title">{{ project.name }}</h3>
                     <p class="card-text text-muted">{{ project.description }}</p>
                 </div>
                 <div class="card-footer">

@@ -1,10 +1,8 @@
-# Config file for settings that affect the whole site, values are expected to change rarely
-# For data that is updated often, use the _data directory
-
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings accessed via {{ site.title }}, {{ site.email }}, and so on.
+
 # start seo tags
 title: Robin Mueller
 email: muellerobin95@gmail.com
@@ -12,12 +10,12 @@ description: >- # this means to ignore newlines until "baseurl:"
     I'm a Software Engineering student and this is where I share my work.
 google_site_verification: oHIsmf8qP2_qzV2ABlKZanK4Z4Jw5Xyfrcu0I5W4Uuo
 logo: /assets/images/favicon-96x96.png
-# TODO: LinkedIn
 social:
     name: Robin Mueller
     links:
         - https://github.com/RobinTTY
         - https://twitter.com/Robin_tty
+        - https://www.linkedin.com/in/robin-m%C3%BCller-574782170/
 twitter:
     username: Robin_tty
     card: summary
@@ -37,11 +35,6 @@ plugins:
 
 # Default layout settings
 defaults:
-  # - scope:
-  #     path: ""
-  #     type: "projects"
-  #   values:
-  #     layout: "project"
   - scope:
       path: ""
       type: "posts"

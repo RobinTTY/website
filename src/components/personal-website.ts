@@ -10,8 +10,14 @@ export class PersonalWebsite extends LitElement {
       height: 100vh;
       display: grid;
       grid-template-rows: auto 1fr auto;
-
       align-items: center;
+
+      background-color: #1a202c;
+      color: white;
+
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.125;
     }
   `;
 

@@ -1,12 +1,15 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { repeat } from 'lit/directives/repeat.js';
+import { SocialData } from '../models/social-data.js';
 
 @customElement('about-me')
 export class AboutMe extends LitElement {
   static styles = css`
     :host {
       display: grid;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 0.15em;
     }
 
     h1 {
@@ -24,40 +27,35 @@ export class AboutMe extends LitElement {
       display: grid;
       grid-template-columns: repeat(3, auto);
       gap: 0.5em;
-      place-content: start;
+      place-content: end;
     }
 
     .brand-logo {
-      height: 40px;
+      height: 36px;
       filter: invert(1);
     }
   `;
+
+  private _socials: SocialData[] = [
+    { name: 'Github', assetPath: '/assets/third-party/github.svg' },
+    { name: 'LinkedIn', assetPath: '/assets/third-party/linkedin.svg' },
+    { name: 'Twitter', assetPath: '/assets/third-party/twitter.svg' },
+  ];
 
   render() {
     return html`
       <h1>Robin Müller</h1>
       <div id="socials-container">
-        <img
-          class="brand-logo"
-          src="/assets/third-party/github.svg"
-          alt="Github logo"
-          loading="lazy"
-          fetchpriority="high"
-        />
-        <img
-          class="brand-logo"
-          src="/assets/third-party/linkedin.svg"
-          alt="LinkedIn logo"
-          loading="lazy"
-          fetchpriority="high"
-        />
-        <img
-          class="brand-logo"
-          src="/assets/third-party/twitter.svg"
-          alt="Twitter logo"
-          loading="lazy"
-          fetchpriority="high"
-        />
+        ${repeat(
+          this._socials,
+          social => html`<img
+            class="brand-logo"
+            src=${social.assetPath}
+            alt="${social.name} logo"
+            loading="lazy"
+            fetchpriority="high"
+          />`
+        )}
       </div>
     `;
   }

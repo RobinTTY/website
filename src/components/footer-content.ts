@@ -8,12 +8,24 @@ export class FooterContent extends LitElement {
       padding: var(--padding-content-area);
       display: grid;
       grid-template-columns: auto auto;
-      gap: 0.5rem;
+      gap: 0.25rem;
+      place-items: center;
+
+      font-size: 0.8em;
+    }
+
+    a {
+      display: grid;
+      place-items: center;
+      height: 38px;
+      width: 38px;
+      padding: 0.05em;
+      border-radius: 2em;
+      filter: drop-shadow(0px 0px 10px #0000006e);
     }
 
     #lit-logo {
-      height: 2rem;
-      padding-left: 0.1em;
+      height: 32px;
     }
   `;
 
@@ -26,7 +38,6 @@ export class FooterContent extends LitElement {
           src="/assets/third-party/lit.svg"
           alt="Lit logo"
           loading="lazy"
-          fetchpriority="high"
         />
       </a>
     `;

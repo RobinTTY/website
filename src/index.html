@@ -11,12 +11,17 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <style>
+      :root {
+        --padding-content-area: 1em;
+      }
+
       html,
       body {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
-        background-color: #ededed;
+        background-color: #1a202c;
+        color: white;
       }
 
       @supports (font-variation-settings: normal) {
@@ -30,7 +35,6 @@
 
   <body>
     <personal-website></personal-website>
-
     <script
       type="module"
       src="./out-tsc/components/personal-website.js"

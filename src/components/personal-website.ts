@@ -24,17 +24,18 @@ export class PersonalWebsite extends LitElement {
     }
   `;
 
-  private router = new Router(this, [
+  private _routes = [
     { path: '/', render: () => html`<about-me></about-me>` },
     { path: '/projects', render: () => html`<h1>Projects</h1>` },
     { path: '/about', render: () => html`<h1>About</h1>` },
-    { path: '/*', render: () => html`<h1>404</h1>` },
-  ]);
+  ];
+
+  private _router = new Router(this, this._routes);
 
   render() {
     return html`
       <header></header>
-      <main>${this.router.outlet()}</main>
+      <main>${this._router.outlet()}</main>
       <footer>
         <footer-content></footer-content>
       </footer>

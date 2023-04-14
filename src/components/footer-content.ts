@@ -5,7 +5,7 @@ import { customElement } from 'lit/decorators.js';
 export class FooterContent extends LitElement {
   static styles = css`
     :host {
-      padding: var(--padding-content-area);
+      padding: 1em;
       display: grid;
       grid-template-columns: auto auto;
       gap: 0.25rem;

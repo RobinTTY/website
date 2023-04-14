@@ -91,9 +91,6 @@ export class AboutMe extends LitElement {
           )}
         </div>
       </div>
-      <div id="details">
-        <div id="coming-soon">More coming soon...</div>
-      </div>
     `;
   }
 }

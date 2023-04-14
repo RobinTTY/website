@@ -20,7 +20,7 @@ export class PersonalWebsite extends LitElement {
     }
 
     header {
-      padding: var(--padding-content-area);
+      padding: 1em;
     }
   `;
 
@@ -28,6 +28,7 @@ export class PersonalWebsite extends LitElement {
     { path: '/', render: () => html`<about-me></about-me>` },
     { path: '/projects', render: () => html`<h1>Projects</h1>` },
     { path: '/about', render: () => html`<h1>About</h1>` },
+    { path: '/*', render: () => html`<h1>404 - Not found :(</h1>` },
   ];
 
   private _router = new Router(this, this._routes);

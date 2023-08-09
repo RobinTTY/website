@@ -57,7 +57,7 @@ export class AboutMe extends LitElement {
     {
       name: 'LinkedIn',
       assetPath: '/assets/third-party/linkedin.svg',
-      websiteUrl: 'https://www.linkedin.com/in/robin-m%C3%BCller-574782170/',
+      websiteUrl: 'https://www.linkedin.com/in/robintty',
     },
     {
       name: 'Twitter',

@@ -3,6 +3,8 @@ import { customElement } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { SocialData } from '../models/social-data.js';
 
+import './logo-container.js';
+
 @customElement('about-me')
 export class AboutMe extends LitElement {
   static styles = css`
@@ -41,11 +43,6 @@ export class AboutMe extends LitElement {
       gap: 0.5em;
       place-content: end;
     }
-
-    .brand-logo {
-      height: 36px;
-      filter: invert(1);
-    }
   `;
 
   private _socials: SocialData[] = [
@@ -74,19 +71,11 @@ export class AboutMe extends LitElement {
           ${repeat(
             this._socials,
             social => html`
-              <a
-                href=${social.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  class="brand-logo"
-                  src=${social.assetPath}
-                  alt="${social.name} logo"
-                  loading="lazy"
-                  fetchpriority="high"
-                />
-              </a>
+              <logo-container
+                assetPath=${social.assetPath}
+                imgAlt=${social.name}
+                linkUrl=${social.websiteUrl}
+              ></logo-container>
             `
           )}
         </div>

@@ -35,7 +35,7 @@ export class FooterContent extends LitElement {
       <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">
         <img
           id="lit-logo"
-          src="/assets/third-party/lit.svg"
+          src="/assets/brands/lit.svg"
           alt="Lit logo"
           loading="lazy"
         />

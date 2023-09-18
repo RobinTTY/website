@@ -2,7 +2,7 @@ import { Router } from '@lit-labs/router/router.js';
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import './about-me.js';
+import '../routes/home-route.js';
 import './footer-content.js';
 
 @customElement('personal-website')
@@ -25,7 +25,7 @@ export class PersonalWebsite extends LitElement {
   `;
 
   private _routes = [
-    { path: '/', render: () => html`<about-me></about-me>` },
+    { path: '/', render: () => html`<home-route></home-route>` },
     { path: '/projects', render: () => html`<h1>Projects</h1>` },
     { path: '/about', render: () => html`<h1>About</h1>` },
     { path: '/*', render: () => html`<h1>404 - Not found :(</h1>` },

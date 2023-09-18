@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import { SocialData } from '../models/social-data.js';
+import { AnchorData } from '../models/AnchorData.js';
 
-import './logo-container.js';
+import './logo-anchor.js';
 
 @customElement('about-me')
 export class AboutMe extends LitElement {
@@ -40,26 +40,26 @@ export class AboutMe extends LitElement {
     #socials-container {
       display: grid;
       grid-template-columns: repeat(3, auto);
-      gap: 0.5em;
+      gap: 0.6em;
       place-content: end;
     }
   `;
 
-  private _socials: SocialData[] = [
+  private _socials: AnchorData[] = [
     {
-      name: 'Github',
-      assetPath: '/assets/third-party/github.svg',
-      websiteUrl: 'https://github.com/RobinTTY',
+      alt: 'Github',
+      logoAssetPath: '/assets/brands/github.svg',
+      href: 'https://github.com/RobinTTY',
     },
     {
-      name: 'LinkedIn',
-      assetPath: '/assets/third-party/linkedin.svg',
-      websiteUrl: 'https://www.linkedin.com/in/robintty',
+      alt: 'LinkedIn',
+      logoAssetPath: '/assets/brands/linkedin.svg',
+      href: 'https://www.linkedin.com/in/robintty',
     },
     {
-      name: 'Twitter',
-      assetPath: '/assets/third-party/twitter.svg',
-      websiteUrl: 'https://twitter.com/Robin_tty',
+      alt: 'Twitter',
+      logoAssetPath: '/assets/brands/twitter.svg',
+      href: 'https://twitter.com/Robin_tty',
     },
   ];
 
@@ -71,11 +71,12 @@ export class AboutMe extends LitElement {
           ${repeat(
             this._socials,
             social => html`
-              <logo-container
-                assetPath=${social.assetPath}
-                imgAlt=${social.name}
-                linkUrl=${social.websiteUrl}
-              ></logo-container>
+              <logo-anchor
+                assetPath=${social.logoAssetPath}
+                imgAlt=${social.alt}
+                linkUrl=${social.href}
+                logoSize="36px"
+              ></logo-anchor>
             `
           )}
         </div>

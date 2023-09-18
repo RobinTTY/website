@@ -5,6 +5,7 @@ import { Project } from '../models/Project.js';
 
 import '../components/about-me.js';
 import '../components/project-showcase.js';
+import '../components/section-separator.js';
 
 @customElement('home-route')
 export class HomeRoute extends LitElement {
@@ -12,7 +13,16 @@ export class HomeRoute extends LitElement {
     :host {
       display: grid;
       grid-template-rows: 1fr auto;
-      gap: 6em;
+      justify-items: center;
+    }
+
+    about-me {
+      margin-top: 30vh;
+      margin-bottom: 30vh;
+    }
+
+    section-separator {
+      margin-bottom: 3em;
     }
   `;
 
@@ -27,7 +37,8 @@ export class HomeRoute extends LitElement {
         'Nivo',
         '.NET',
         'GraphQL',
-        'Nordigen API',
+        'MongoDB',
+        'SQLite',
       ],
       links: [
         {
@@ -75,6 +86,7 @@ export class HomeRoute extends LitElement {
   render() {
     return html`
       <about-me></about-me>
+      <section-separator></section-separator>
       ${repeat(
         this._projects,
         project => html` <project-showcase

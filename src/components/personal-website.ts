@@ -22,6 +22,10 @@ export class PersonalWebsite extends LitElement {
     header {
       padding: 1em;
     }
+
+    footer {
+      margin-top: 2em;
+    }
   `;
 
   private _routes = [

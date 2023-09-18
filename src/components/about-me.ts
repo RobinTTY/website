@@ -66,6 +66,7 @@ export class AboutMe extends LitElement {
   render() {
     return html`
       <div id="first-glance">
+        <span>Hey, I am</span>
         <h1>Robin Müller</h1>
         <div id="socials-container">
           ${repeat(

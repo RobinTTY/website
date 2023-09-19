@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
+import { styleMap } from 'lit/directives/style-map.js';
 import { AnchorData } from '../models/AnchorData.js';
 
 @customElement('project-showcase')
@@ -15,7 +16,6 @@ export class ProjectShowcase extends LitElement {
     }
 
     img {
-      grid-area: 1 / 1 / 1 / 8;
       border-radius: 4px;
       z-index: 0;
       filter: blur(1px);
@@ -27,13 +27,11 @@ export class ProjectShowcase extends LitElement {
     }
 
     .project-information {
-      grid-area: 1 / 6 / 1 / -1;
       z-index: 1;
 
       display: grid;
       grid-template-rows: auto;
       gap: 0.4em;
-      text-align: right;
     }
 
     .title {
@@ -87,18 +85,25 @@ export class ProjectShowcase extends LitElement {
   imageOnLeft = true;
 
   render() {
-    // const styles = {
-    //   backgroundColor: this.imageOnLeft ? 'blue' : 'gray',
-    //   color: 'white',
-    // };
+    const leftAlignedContent = '1 / 1 / 1 / 8';
+    const rightAlignedContent = '1 / 6 / 1 / -1';
+
+    const imgGrid = {
+      gridArea: this.imageOnLeft ? leftAlignedContent : rightAlignedContent,
+    };
+    const informationGrid = {
+      gridArea: this.imageOnLeft ? rightAlignedContent : leftAlignedContent,
+      textAlign: this.imageOnLeft ? 'right' : 'left',
+    };
 
     return html`
       <img
+        style=${styleMap(imgGrid)}
         src=${this.projectImageAssetPath}
         alt="example-project-card"
         height="360px"
       />
-      <div class="project-information">
+      <div class="project-information" style=${styleMap(informationGrid)}>
         <div class="title">${this.projectTitle}</div>
         <div class="description">${this.description}</div>
         <div class="technologies">

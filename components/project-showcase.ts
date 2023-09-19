@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import { styleMap } from 'lit/directives/style-map.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { AnchorData } from '../models/AnchorData.js';
 
 @customElement('project-showcase')
@@ -12,12 +12,11 @@ export class ProjectShowcase extends LitElement {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: center;
-      max-width: 800px;
     }
 
     img {
-      border-radius: 4px;
       z-index: 0;
+      border-radius: 4px;
       filter: blur(1px);
     }
 
@@ -28,7 +27,6 @@ export class ProjectShowcase extends LitElement {
 
     .project-information {
       z-index: 1;
-
       display: grid;
       grid-template-rows: auto;
       gap: 0.4em;
@@ -44,25 +42,89 @@ export class ProjectShowcase extends LitElement {
       background-color: rgb(17, 34, 64);
       border-radius: 4px;
       box-shadow: 0 10px 20px -15px #121111;
-
-      font-size: 0.55em;
-      font-weight: 500;
-      text-align: justify;
       color: rgb(168, 178, 209);
     }
 
     .technologies {
       color: rgb(168, 178, 209);
-      font-size: 0.5em;
-      font-weight: 600;
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
     }
 
-    .technologies > span {
+    .technologies > li {
       padding: 0.2em 0.4em;
     }
 
     .links > logo-anchor {
       padding: 0.1em;
+    }
+
+    @media (max-width: 860px) {
+      :host {
+        max-width: 600px;
+      }
+
+      img {
+        grid-area: 1 / 1 / 1 / -1;
+        width: 100%;
+        filter: brightness(0.2);
+      }
+
+      .project-information {
+        grid-area: 1 / 2 / 1 / 11;
+        min-width: 0;
+      }
+
+      .title {
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+
+      .description {
+        font-size: 0.45em;
+        font-weight: 500;
+        text-align: justify;
+      }
+
+      .technologies {
+        font-size: 0.45em;
+        font-weight: 600;
+      }
+    }
+
+    @media (min-width: 861px) {
+      :host {
+        max-width: 800px;
+      }
+
+      .content-left {
+        grid-area: 1 / 1 / 1 / 8;
+      }
+
+      .content-right {
+        grid-area: 1 / 6 / 1 / -1;
+      }
+
+      img {
+        height: 360px;
+      }
+
+      .description {
+        font-size: 0.55em;
+        font-weight: 500;
+        text-align: justify;
+      }
+
+      .technologies {
+        font-size: 0.5em;
+        font-weight: 600;
+      }
+
+      .project-information {
+      }
     }
   `;
 
@@ -85,33 +147,33 @@ export class ProjectShowcase extends LitElement {
   imageOnLeft = false;
 
   render() {
-    const leftAlignedContent = '1 / 1 / 1 / 8';
-    const rightAlignedContent = '1 / 6 / 1 / -1';
-
-    const imgGrid = {
-      gridArea: this.imageOnLeft ? leftAlignedContent : rightAlignedContent,
+    const imgClass = {
+      'content-left': this.imageOnLeft,
+      'content-right': !this.imageOnLeft,
     };
-    const informationGrid = {
-      gridArea: this.imageOnLeft ? rightAlignedContent : leftAlignedContent,
-      textAlign: this.imageOnLeft ? 'right' : 'left',
+    const projectInfoClass = {
+      'content-left': !this.imageOnLeft,
+      'content-right': this.imageOnLeft,
     };
 
-    return html`
+    const img = html`
       <img
-        style=${styleMap(imgGrid)}
+        class=${classMap(imgClass)}
         src=${this.projectImageAssetPath}
         alt="example-project-card"
-        height="360px"
       />
-      <div class="project-information" style=${styleMap(informationGrid)}>
+    `;
+
+    const projectInformation = html`
+      <div class="project-information ${classMap(projectInfoClass)}">
         <div class="title">${this.projectTitle}</div>
         <div class="description">${this.description}</div>
-        <div class="technologies">
+        <ul class="technologies">
           ${repeat(
             this.technologies,
-            technology => html`<span>${technology}</span>`
+            technology => html`<li>${technology}</li>`
           )}
-        </div>
+        </ul>
         <div class="links">
           ${repeat(
             this.links,
@@ -127,6 +189,8 @@ export class ProjectShowcase extends LitElement {
         </div>
       </div>
     `;
+
+    return html` ${img} ${projectInformation} `;
   }
 }
 

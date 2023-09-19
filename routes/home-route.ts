@@ -24,6 +24,12 @@ export class HomeRoute extends LitElement {
     section-separator {
       margin-bottom: 3em;
     }
+
+    .projects {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 3em;
+    }
   `;
 
   private _projects: Project[] = [
@@ -40,27 +46,39 @@ export class HomeRoute extends LitElement {
         'MongoDB',
         'SQLite',
       ],
+      projectImageAssetPath: '/assets/projects/pfd.png',
       links: [
         {
           alt: 'Github',
           logoAssetPath: '/assets/brands/github.svg',
           href: 'https://github.com/RobinTTY/PersonalFinanceDashboard',
-          logoSize: '24px',
         },
         {
           alt: 'Website',
           logoAssetPath: '/assets/common/external-link.svg',
           href: 'https://robintty.github.io/PersonalFinanceDashboard/',
-          logoSize: '24px',
         },
       ],
     },
-    // {
-    //   title: 'NordigenApiClient',
-    //   description: 'A C# client for the open banking API of nordigen.com',
-    //   technologies: ['C#', '.NET 7', 'API'],
-    //   links: [],
-    // },
+    {
+      title: 'Nordigen API client',
+      description:
+        'A C# client for the open banking API of Nordigen. Allows users to access bank account information, balances and transactions for more 2300 banks.',
+      projectImageAssetPath: '/assets/projects/nordigen-api-client.png',
+      technologies: ['C#', '.NET 7', 'REST', 'Nordigen API'],
+      links: [
+        {
+          alt: 'Github',
+          logoAssetPath: '/assets/brands/github.svg',
+          href: 'https://github.com/RobinTTY/NordigenApiClient',
+        },
+        {
+          alt: 'Nuget',
+          logoAssetPath: '/assets/brands/nuget.svg',
+          href: 'https://www.nuget.org/packages/RobinTTY.NordigenApiClient',
+        },
+      ],
+    },
     // {
     //   title: 'Website',
     //   description: 'My personal website (you are here)',
@@ -87,15 +105,18 @@ export class HomeRoute extends LitElement {
     return html`
       <about-me></about-me>
       <section-separator></section-separator>
-      ${repeat(
-        this._projects,
-        project => html` <project-showcase
-          projectTitle=${project.title}
-          description=${project.description}
-          .technologies=${project.technologies}
-          .links=${project.links}
-        ></project-showcase>`
-      )}
+      <div class="projects">
+        ${repeat(
+          this._projects,
+          project => html` <project-showcase
+            projectTitle=${project.title}
+            description=${project.description}
+            projectImageAssetPath=${project.projectImageAssetPath}
+            .technologies=${project.technologies}
+            .links=${project.links}
+          ></project-showcase>`
+        )}
+      </div>
     `;
   }
 }

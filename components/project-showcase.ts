@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
 import { AnchorData } from '../models/AnchorData.js';
 
 @customElement('project-showcase')
@@ -16,8 +15,7 @@ export class ProjectShowcase extends LitElement {
     }
 
     img {
-      grid-row: 1;
-      grid-column: 1 / 8;
+      grid-area: 1 / 1 / 1 / 8;
       border-radius: 4px;
       z-index: 0;
       filter: blur(1px);
@@ -29,14 +27,18 @@ export class ProjectShowcase extends LitElement {
     }
 
     .project-information {
-      grid-row: 1;
-      grid-column: 6 / -1;
+      grid-area: 1 / 6 / 1 / -1;
       z-index: 1;
 
       display: grid;
       grid-template-rows: auto;
       gap: 0.4em;
       text-align: right;
+    }
+
+    .title {
+      text-shadow: 1px 1px 0 #000000a3, -1px -1px 0 #000000a3,
+        1px -1px 0 #000000a3, -1px 1px 0 #000000a3, 1px 1px 0 #000000a3;
     }
 
     .description {
@@ -72,16 +74,27 @@ export class ProjectShowcase extends LitElement {
   @property({ type: String })
   description = '';
 
+  @property({ type: String })
+  projectImageAssetPath = '';
+
   @property({ attribute: false })
   technologies: string[] = [];
 
   @property({ attribute: false })
   links: Array<AnchorData> = [];
 
+  @property({ type: Boolean })
+  imageOnLeft = true;
+
   render() {
+    // const styles = {
+    //   backgroundColor: this.imageOnLeft ? 'blue' : 'gray',
+    //   color: 'white',
+    // };
+
     return html`
       <img
-        src="../assets/projects/example-project-card.png"
+        src=${this.projectImageAssetPath}
         alt="example-project-card"
         height="360px"
       />
@@ -102,12 +115,18 @@ export class ProjectShowcase extends LitElement {
                 assetPath=${link.logoAssetPath}
                 imgAlt=${link.alt}
                 linkUrl=${link.href}
-                logoSize=${ifDefined(link.logoSize)}
+                logoSize="24px"
               ></logo-anchor>
             `
           )}
         </div>
       </div>
     `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'project-showcase': ProjectShowcase;
   }
 }

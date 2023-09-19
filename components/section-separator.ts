@@ -27,3 +27,9 @@ export class SectionSeparator extends LitElement {
     return html`<span>${this.sectionTitle}</span>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'section-separator': SectionSeparator;
+  }
+}

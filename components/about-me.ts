@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
-import { AnchorData } from '../models/AnchorData.js';
+import { Socials } from '../data/Socials.js';
 
 import './logo-anchor.js';
 
@@ -45,24 +45,6 @@ export class AboutMe extends LitElement {
     }
   `;
 
-  private _socials: AnchorData[] = [
-    {
-      alt: 'Github',
-      logoAssetPath: '/assets/brands/github.svg',
-      href: 'https://github.com/RobinTTY',
-    },
-    {
-      alt: 'LinkedIn',
-      logoAssetPath: '/assets/brands/linkedin.svg',
-      href: 'https://www.linkedin.com/in/robintty',
-    },
-    {
-      alt: 'Twitter',
-      logoAssetPath: '/assets/brands/twitter.svg',
-      href: 'https://twitter.com/Robin_tty',
-    },
-  ];
-
   render() {
     return html`
       <div id="first-glance">
@@ -70,7 +52,7 @@ export class AboutMe extends LitElement {
         <h1>Robin Müller</h1>
         <div id="socials-container">
           ${repeat(
-            this._socials,
+            Socials,
             social => html`
               <logo-anchor
                 assetPath=${social.logoAssetPath}

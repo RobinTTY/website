@@ -81,26 +81,44 @@ export class HomeRoute extends LitElement {
         },
       ],
     },
-    // {
-    //   title: 'Website',
-    //   description: 'My personal website (you are here)',
-    //   technologies: ['TypeScript', 'LitElement', 'Web Components'],
-    //   links: [],
-    // },
-    // {
-    //   title: 'TBA...',
-    //   description:
-    //     'A tracker for your personal finances I am currently working on',
-    //   technologies: ['React', 'C#', 'GraphQL'],
-    //   links: [],
-    // },
-    // {
-    //   title: 'BME680 Driver',
-    //   description:
-    //     'Device driver for the Bosch BME680 temperature, humidity, pressure, air quality sensor',
-    //   technologies: ['C#', 'IOT', 'Hardware'],
-    //   links: [],
-    // },
+    {
+      title: 'BME680 Driver',
+      description:
+        'Device driver for the Bosch BME680 temperature, humidity, pressure and air quality sensor. ',
+      projectImageAssetPath: '/assets/projects/bme680.webp',
+      technologies: ['C#', 'IOT', 'Hardware'],
+      links: [
+        {
+          alt: 'Github',
+          logoAssetPath: '/assets/brands/github.svg',
+          href: 'https://github.com/RobinTTY/BME680',
+        },
+        {
+          alt: 'Nuget',
+          logoAssetPath: '/assets/brands/nuget.svg',
+          href: 'https://www.nuget.org/packages/Bme680Driver/',
+        },
+      ],
+    },
+    {
+      title: 'Website',
+      description:
+        'My personal website (you are here). Built using Lit, a lightweight web components library.',
+      projectImageAssetPath: '/assets/projects/website.png',
+      technologies: ['TypeScript', 'Lit', 'Web Components'],
+      links: [
+        {
+          alt: 'Github',
+          logoAssetPath: '/assets/brands/github.svg',
+          href: 'https://github.com/RobinTTY/RobinTTY.github.io',
+        },
+        {
+          alt: 'Website',
+          logoAssetPath: '/assets/common/external-link.svg',
+          href: 'https://www.robintty.com/',
+        },
+      ],
+    },
   ];
 
   render() {

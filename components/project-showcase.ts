@@ -110,6 +110,7 @@ export class ProjectShowcase extends LitElement {
 
       img {
         height: 360px;
+        filter: brightness(0.5);
       }
 
       .description {
@@ -121,9 +122,6 @@ export class ProjectShowcase extends LitElement {
       .technologies {
         font-size: 0.5em;
         font-weight: 600;
-      }
-
-      .project-information {
       }
     }
   `;

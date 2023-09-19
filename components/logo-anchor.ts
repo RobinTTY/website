@@ -1,12 +1,21 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('logo-container')
-export class LogoContainer extends LitElement {
+@customElement('logo-anchor')
+export class LogoAnchor extends LitElement {
   static styles = css`
-    .brand-logo {
-      height: 36px;
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+    img {
       filter: invert(1);
+      display: block;
+    }
+
+    .logo:hover {
+      filter: invert(0.5);
+      transition: filter 0.2s ease;
     }
   `;
 
@@ -14,7 +23,10 @@ export class LogoContainer extends LitElement {
   assetPath = '';
 
   @property({ type: String })
-  imgAlt = '';
+  logoSize = '100%';
+
+  @property({ type: String })
+  logoAlt = '';
 
   @property({ type: String })
   linkUrl = '';
@@ -23,9 +35,10 @@ export class LogoContainer extends LitElement {
     return html`
       <a href=${this.linkUrl} target="_blank" rel="noopener noreferrer">
         <img
-          class="brand-logo"
+          class="logo"
+          height=${this.logoSize}
           src=${this.assetPath}
-          alt="${this.imgAlt} logo"
+          alt="${this.logoAlt} logo"
           loading="lazy"
           fetchpriority="high"
         />
@@ -36,6 +49,6 @@ export class LogoContainer extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'logo-container': LogoContainer;
+    'logo-anchor': LogoAnchor;
   }
 }

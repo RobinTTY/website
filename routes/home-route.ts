@@ -29,6 +29,8 @@ export class HomeRoute extends LitElement {
       display: grid;
       grid-template-columns: auto;
       gap: 4em;
+
+      padding: 0 1em;
     }
   `;
 

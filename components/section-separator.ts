@@ -9,7 +9,7 @@ export class SectionSeparator extends LitElement {
       content: '';
       display: inline-block;
       position: relative;
-      width: min(25vw, 300px);
+      width: min(20vw, 300px);
       height: 1px;
       top: -0.35em;
       background-color: rgb(168, 178, 209);
@@ -17,6 +17,12 @@ export class SectionSeparator extends LitElement {
 
     span {
       padding: 0 1em;
+    }
+
+    @media (max-width: 768px) {
+      span {
+        font-size: 0.85em;
+      }
     }
   `;
 

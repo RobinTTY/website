@@ -82,7 +82,7 @@ export class ProjectShowcase extends LitElement {
   links: Array<AnchorData> = [];
 
   @property({ type: Boolean })
-  imageOnLeft = true;
+  imageOnLeft = false;
 
   render() {
     const leftAlignedContent = '1 / 1 / 1 / 8';

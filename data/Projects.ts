@@ -31,7 +31,7 @@ export const PersonalProjects: Project[] = [
   {
     title: 'Nordigen API client',
     description:
-      'A C# client for the open banking API of Nordigen. Allows users to access bank account information, balances and transactions for more 2300 banks.',
+      'A C# client for the open banking API of Nordigen. Allows users to access bank account information, balances and transactions for more than 2300 banks.',
     projectImageAssetPath: '/assets/projects/nordigen-api-client.png',
     technologies: ['C#', '.NET 7', 'REST', 'Nordigen API'],
     links: [

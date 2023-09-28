@@ -158,7 +158,7 @@ export class ProjectShowcase extends LitElement {
       <img
         class=${classMap(imgClass)}
         src=${this.projectImageAssetPath}
-        alt="example-project-card"
+        alt=${this.projectTitle}
       />
     `;
 
@@ -178,7 +178,7 @@ export class ProjectShowcase extends LitElement {
             link => html`
               <logo-anchor
                 assetPath=${link.logoAssetPath}
-                imgAlt=${link.alt}
+                logoAlt=${link.alt}
                 linkUrl=${link.href}
                 logoSize="24px"
               ></logo-anchor>

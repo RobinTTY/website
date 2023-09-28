@@ -56,7 +56,7 @@ export class AboutMe extends LitElement {
             social => html`
               <logo-anchor
                 assetPath=${social.logoAssetPath}
-                imgAlt=${social.alt}
+                logoAlt=${social.alt}
                 linkUrl=${social.href}
                 logoSize="36px"
               ></logo-anchor>

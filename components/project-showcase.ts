@@ -158,7 +158,7 @@ export class ProjectShowcase extends LitElement {
       <img
         class=${classMap(imgClass)}
         src=${this.projectImageAssetPath}
-        alt="example-project-card"
+        alt=${this.projectTitle}
       />
     `;
 

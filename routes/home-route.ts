@@ -40,14 +40,15 @@ export class HomeRoute extends LitElement {
       <div class="projects">
         ${repeat(
           PersonalProjects,
-          (project, index) => html` <project-showcase
-            projectTitle=${project.title}
-            description=${project.description}
-            projectImageAssetPath=${project.projectImageAssetPath}
-            .technologies=${project.technologies}
-            .links=${project.links}
-            ?imageOnLeft=${index % 2 === 0}
-          ></project-showcase>`
+          (project, index) =>
+            html` <project-showcase
+              projectTitle=${project.title}
+              description=${project.description}
+              projectImageAssetPath=${project.projectImageAssetPath}
+              .technologies=${project.technologies}
+              .links=${project.links}
+              ?imageOnLeft=${index % 2 === 0}
+            ></project-showcase>`,
         )}
       </div>
     `;

@@ -60,7 +60,7 @@ export class AboutMe extends LitElement {
                 linkUrl=${social.href}
                 logoSize="36px"
               ></logo-anchor>
-            `
+            `,
           )}
         </div>
       </div>

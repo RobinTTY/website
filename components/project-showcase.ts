@@ -33,8 +33,12 @@ export class ProjectShowcase extends LitElement {
     }
 
     .title {
-      text-shadow: 1px 1px 0 #000000a3, -1px -1px 0 #000000a3,
-        1px -1px 0 #000000a3, -1px 1px 0 #000000a3, 1px 1px 0 #000000a3;
+      text-shadow:
+        1px 1px 0 #000000a3,
+        -1px -1px 0 #000000a3,
+        1px -1px 0 #000000a3,
+        -1px 1px 0 #000000a3,
+        1px 1px 0 #000000a3;
     }
 
     .description {
@@ -169,7 +173,7 @@ export class ProjectShowcase extends LitElement {
         <ul class="technologies">
           ${repeat(
             this.technologies,
-            technology => html`<li>${technology}</li>`
+            technology => html`<li>${technology}</li>`,
           )}
         </ul>
         <div class="links">
@@ -182,7 +186,7 @@ export class ProjectShowcase extends LitElement {
                 linkUrl=${link.href}
                 logoSize="24px"
               ></logo-anchor>
-            `
+            `,
           )}
         </div>
       </div>

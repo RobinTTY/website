@@ -26,6 +26,8 @@ export class FooterContent extends LitElement {
 
     #lit-logo {
       height: 32px;
+      width: 32px;
+      object-fit: contain;
     }
   `;
 
@@ -33,12 +35,7 @@ export class FooterContent extends LitElement {
     return html`
       Built with
       <a href="https://lit.dev" target="_blank" rel="noopener noreferrer">
-        <img
-          id="lit-logo"
-          src="/assets/brands/lit.svg"
-          alt="Lit logo"
-          loading="lazy"
-        />
+        <img id="lit-logo" src="/assets/brands/lit.svg" alt="Lit logo" />
       </a>
     `;
   }

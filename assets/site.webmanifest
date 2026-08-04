@@ -1,0 +1,22 @@
+{
+  "name": "Robin Müller",
+  "short_name": "RobinTTY",
+  "description": "Robin Müller — software developer. Personal site and a look at my projects across .NET, TypeScript and web development.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a202c",
+  "theme_color": "#1a202c",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

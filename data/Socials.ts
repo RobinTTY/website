@@ -11,9 +11,4 @@ export const Socials: AnchorData[] = [
     logoAssetPath: '/assets/brands/linkedin.svg',
     href: 'https://www.linkedin.com/in/robintty',
   },
-  {
-    alt: 'Twitter',
-    logoAssetPath: '/assets/brands/twitter.svg',
-    href: 'https://twitter.com/Robin_tty',
-  },
 ];

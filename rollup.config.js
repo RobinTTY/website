@@ -23,6 +23,13 @@ export default {
       minify: true,
       injectServiceWorker: true,
       serviceWorkerPath: 'dist/sw.js',
+      /**
+       * The copyfiles step already places everything under dist/assets, and
+       * the plugin cannot rewrite url() inside inline @font-face. Letting
+       * it hash-extract linked assets would emit a second copy under a hashed
+       * name and leave the preload pointing somewhere the CSS never requests.
+       */
+      extractAssets: false,
     }),
     /** Resolve bare module imports */
     nodeResolve(),
@@ -62,8 +69,9 @@ export default {
       swDest: path.join('dist', 'sw.js'),
       // directory to match patterns against to be precached
       globDirectory: path.join('dist'),
-      // cache any html js and css by default
-      globPatterns: ['**/*.{html,js,css,webmanifest}'],
+      // cache the shell plus every asset the pages actually reference, so the
+      // site is usable offline rather than loading with missing images
+      globPatterns: ['**/*.{html,js,css,webmanifest,svg,png,webp,ico,woff2}'],
       skipWaiting: true,
       clientsClaim: true,
       runtimeCaching: [{ urlPattern: 'polyfills/*.js', handler: 'CacheFirst' }],

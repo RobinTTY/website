@@ -45,6 +45,8 @@ export class HomeRoute extends LitElement {
               projectTitle=${project.title}
               description=${project.description}
               projectImageAssetPath=${project.projectImageAssetPath}
+              projectImageWidth=${project.projectImageWidth}
+              projectImageHeight=${project.projectImageHeight}
               .technologies=${project.technologies}
               .links=${project.links}
               ?imageOnLeft=${index % 2 === 0}

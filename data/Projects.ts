@@ -15,6 +15,8 @@ export const PersonalProjects: Project[] = [
       'SQLite',
     ],
     projectImageAssetPath: '/assets/projects/pfd.png',
+    projectImageWidth: 964,
+    projectImageHeight: 764,
     links: [
       {
         alt: 'Github',
@@ -33,6 +35,8 @@ export const PersonalProjects: Project[] = [
     description:
       'A C# client for the open banking API of Nordigen. Allows users to access bank account information, balances and transactions for more than 2300 banks.',
     projectImageAssetPath: '/assets/projects/nordigen-api-client.png',
+    projectImageWidth: 708,
+    projectImageHeight: 535,
     technologies: ['C#', '.NET 7', 'REST', 'Nordigen API'],
     links: [
       {
@@ -52,6 +56,8 @@ export const PersonalProjects: Project[] = [
     description:
       'Device driver for the Bosch BME680 temperature, humidity, pressure and air quality sensor. ',
     projectImageAssetPath: '/assets/projects/bme680.webp',
+    projectImageWidth: 786,
+    projectImageHeight: 583,
     technologies: ['C#', 'IOT', 'Hardware'],
     links: [
       {
@@ -71,6 +77,8 @@ export const PersonalProjects: Project[] = [
     description:
       'My personal website (you are here). Built using Lit, a lightweight web components library.',
     projectImageAssetPath: '/assets/projects/website.png',
+    projectImageWidth: 1141,
+    projectImageHeight: 679,
     technologies: ['TypeScript', 'Lit', 'Web Components'],
     links: [
       {

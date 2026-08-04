@@ -9,7 +9,9 @@ import './footer-content.js';
 export class PersonalWebsite extends LitElement {
   static styles = css`
     :host {
-      height: 100vh;
+      /* dvh tracks the retracting mobile browser chrome; vh is the fallback. */
+      min-height: 100vh;
+      min-height: 100dvh;
       display: grid;
       grid-template-rows: auto 1fr auto;
       align-items: center;

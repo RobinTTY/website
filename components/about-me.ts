@@ -38,10 +38,10 @@ export class AboutMe extends LitElement {
     }
 
     #socials-container {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.6em;
-      place-content: end;
+      justify-content: end;
     }
   `;
 

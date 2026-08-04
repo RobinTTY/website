@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
 
 @customElement('logo-anchor')
 export class LogoAnchor extends LitElement {
@@ -11,6 +12,12 @@ export class LogoAnchor extends LitElement {
     img {
       filter: invert(1);
       display: block;
+      /* The brand SVGs carry only a viewBox, so they have no intrinsic size.
+         Reserving a square box keeps them from collapsing to zero width
+         before they load; contain preserves each icon's own ratio. */
+      height: var(--logo-size);
+      width: var(--logo-size);
+      object-fit: contain;
     }
 
     .logo:hover {
@@ -33,15 +40,13 @@ export class LogoAnchor extends LitElement {
 
   render() {
     return html`
-      <a href=${this.linkUrl} target="_blank" rel="noopener noreferrer">
-        <img
-          class="logo"
-          height=${this.logoSize}
-          src=${this.assetPath}
-          alt="${this.logoAlt} logo"
-          loading="lazy"
-          fetchpriority="high"
-        />
+      <a
+        href=${this.linkUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        style=${styleMap({ '--logo-size': this.logoSize })}
+      >
+        <img class="logo" src=${this.assetPath} alt="${this.logoAlt} logo" />
       </a>
     `;
   }

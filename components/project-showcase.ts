@@ -6,7 +6,6 @@ import { AnchorData } from '../models/AnchorData.js';
 
 @customElement('project-showcase')
 export class ProjectShowcase extends LitElement {
-  // TODO: Overlay text on picture for small viewports
   static styles = css`
     :host {
       display: grid;
@@ -74,6 +73,9 @@ export class ProjectShowcase extends LitElement {
       img {
         grid-area: 1 / 1 / 1 / -1;
         width: 100%;
+        /* Override the width/height attributes' presentational hint so the
+           image scales on its own aspect ratio instead of its pixel size. */
+        height: auto;
         filter: brightness(0.2);
       }
 
@@ -114,6 +116,7 @@ export class ProjectShowcase extends LitElement {
 
       img {
         height: 360px;
+        width: auto;
         filter: brightness(0.5);
       }
 
@@ -139,6 +142,12 @@ export class ProjectShowcase extends LitElement {
   @property({ type: String })
   projectImageAssetPath = '';
 
+  @property({ type: Number })
+  projectImageWidth = 0;
+
+  @property({ type: Number })
+  projectImageHeight = 0;
+
   @property({ attribute: false })
   technologies: string[] = [];
 
@@ -162,6 +171,8 @@ export class ProjectShowcase extends LitElement {
       <img
         class=${classMap(imgClass)}
         src=${this.projectImageAssetPath}
+        width=${this.projectImageWidth}
+        height=${this.projectImageHeight}
         alt=${this.projectTitle}
       />
     `;

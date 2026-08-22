@@ -21,8 +21,20 @@ export class PersonalWebsite extends LitElement {
       font-weight: 700;
     }
 
+    /* Lets the home hero span the viewport; routed content that wants to
+       be narrow constrains itself. */
+    main {
+      width: 100%;
+    }
+
     header {
       padding: 1em;
+    }
+
+    /* No nav yet — an empty header would otherwise hold open a band of page
+       background above the hero. */
+    header:empty {
+      display: none;
     }
 
     footer {

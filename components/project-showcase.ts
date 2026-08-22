@@ -4,6 +4,8 @@ import { repeat } from 'lit/directives/repeat.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { AnchorData } from '../models/AnchorData.js';
 
+import './logo-anchor.js';
+
 @customElement('project-showcase')
 export class ProjectShowcase extends LitElement {
   static styles = css`
@@ -11,6 +13,7 @@ export class ProjectShowcase extends LitElement {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: center;
+      width: 100%;
     }
 
     img {
@@ -67,7 +70,8 @@ export class ProjectShowcase extends LitElement {
 
     @media (max-width: 860px) {
       :host {
-        max-width: 600px;
+        /* The shared content width governs; the card just fills it. */
+        max-width: none;
       }
 
       img {
@@ -103,7 +107,8 @@ export class ProjectShowcase extends LitElement {
 
     @media (min-width: 861px) {
       :host {
-        max-width: 800px;
+        /* The shared content width governs; the card just fills it. */
+        max-width: none;
       }
 
       .content-left {
@@ -115,8 +120,9 @@ export class ProjectShowcase extends LitElement {
       }
 
       img {
+        width: 100%;
         height: 360px;
-        width: auto;
+        object-fit: cover;
         filter: brightness(0.5);
       }
 

@@ -1,5 +1,5 @@
 export type AnchorData = {
-  logoAssetPath: string;
+  logoAssetPath?: string;
   logoSize?: string;
   href: string;
   alt: string;

@@ -63,7 +63,9 @@ export default {
     }),
     /** Create and inject a service worker */
     generateSW({
-      globIgnores: ['polyfills/*.js', 'nomodule-*.js'],
+      // figure-1120.* is only fetched on high-DPI screens, so it is left
+      // out of the precache and served from the network instead.
+      globIgnores: ['polyfills/*.js', 'nomodule-*.js', 'assets/portrait/figure-1120.*'],
       navigateFallback: '/index.html',
       // where to output the generated sw
       swDest: path.join('dist', 'sw.js'),
@@ -71,7 +73,7 @@ export default {
       globDirectory: path.join('dist'),
       // cache the shell plus every asset the pages actually reference, so the
       // site is usable offline rather than loading with missing images
-      globPatterns: ['**/*.{html,js,css,webmanifest,svg,png,webp,ico,woff2}'],
+      globPatterns: ['**/*.{html,js,css,webmanifest,svg,png,webp,avif,ico,woff2}'],
       skipWaiting: true,
       clientsClaim: true,
       runtimeCaching: [{ urlPattern: 'polyfills/*.js', handler: 'CacheFirst' }],

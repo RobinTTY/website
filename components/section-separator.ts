@@ -4,45 +4,35 @@ import { customElement, property } from 'lit/decorators.js';
 @customElement('section-separator')
 export class SectionSeparator extends LitElement {
   static styles = css`
+    :host {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      width: 100%;
+    }
+
+    /* The rules take whatever space the title leaves, so the separator always
+       spans exactly the content width it is given. */
     :host::before,
     :host::after {
       content: '';
-      display: inline-block;
-      position: relative;
-
+      flex: 1;
+      min-width: 0;
       height: 1px;
-      top: -0.35em;
       background-color: rgb(168, 178, 209);
     }
 
     span {
-      padding: 0 1em;
-    }
-
-    @media (min-width: 769px) {
-      :host::before,
-      :host::after {
-        width: min(25vw, 300px);
-      }
+      white-space: nowrap;
     }
 
     @media (max-width: 768px) {
-      :host::before,
-      :host::after {
-        width: 20vw;
-      }
-
       span {
         font-size: 0.85em;
       }
     }
 
     @media (max-width: 450px) {
-      :host::before,
-      :host::after {
-        width: 15vw;
-      }
-
       span {
         font-size: 0.75em;
       }

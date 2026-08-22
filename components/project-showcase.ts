@@ -16,10 +16,16 @@ export class ProjectShowcase extends LitElement {
       width: 100%;
     }
 
-    img {
+    picture {
+      display: block;
       z-index: 0;
+      min-width: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
       border-radius: 4px;
-      filter: blur(1px);
     }
 
     img:hover {
@@ -74,9 +80,11 @@ export class ProjectShowcase extends LitElement {
         max-width: none;
       }
 
-      img {
+      picture {
         grid-area: 1 / 1 / 1 / -1;
-        width: 100%;
+      }
+
+      img {
         /* Override the width/height attributes' presentational hint so the
            image scales on its own aspect ratio instead of its pixel size. */
         height: auto;
@@ -120,7 +128,6 @@ export class ProjectShowcase extends LitElement {
       }
 
       img {
-        width: 100%;
         height: 360px;
         object-fit: cover;
         filter: brightness(0.5);
@@ -146,7 +153,7 @@ export class ProjectShowcase extends LitElement {
   description = '';
 
   @property({ type: String })
-  projectImageAssetPath = '';
+  projectImageBasePath = '';
 
   @property({ type: Number })
   projectImageWidth = 0;
@@ -174,13 +181,17 @@ export class ProjectShowcase extends LitElement {
     };
 
     const img = html`
-      <img
-        class=${classMap(imgClass)}
-        src=${this.projectImageAssetPath}
-        width=${this.projectImageWidth}
-        height=${this.projectImageHeight}
-        alt=${this.projectTitle}
-      />
+      <picture class=${classMap(imgClass)}>
+        <source type="image/avif" srcset="${this.projectImageBasePath}.avif" />
+        <img
+          src="${this.projectImageBasePath}.webp"
+          width=${this.projectImageWidth}
+          height=${this.projectImageHeight}
+          alt=${this.projectTitle}
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     `;
 
     const projectInformation = html`

@@ -14,7 +14,7 @@ export const PersonalProjects: Project[] = [
       'MongoDB',
       'SQLite',
     ],
-    projectImageAssetPath: '/assets/projects/pfd.png',
+    projectImageBasePath: '/assets/projects/pfd',
     projectImageWidth: 964,
     projectImageHeight: 764,
     links: [
@@ -34,7 +34,7 @@ export const PersonalProjects: Project[] = [
     title: 'Nordigen API client',
     description:
       'A C# client for the open banking API of Nordigen. Allows users to access bank account information, balances and transactions for more than 2300 banks.',
-    projectImageAssetPath: '/assets/projects/nordigen-api-client.png',
+    projectImageBasePath: '/assets/projects/nordigen-api-client',
     projectImageWidth: 708,
     projectImageHeight: 535,
     technologies: ['C#', '.NET 7', 'REST', 'Nordigen API'],
@@ -55,7 +55,7 @@ export const PersonalProjects: Project[] = [
     title: 'BME680 Driver',
     description:
       'Device driver for the Bosch BME680 temperature, humidity, pressure and air quality sensor. ',
-    projectImageAssetPath: '/assets/projects/bme680.webp',
+    projectImageBasePath: '/assets/projects/bme680',
     projectImageWidth: 786,
     projectImageHeight: 583,
     technologies: ['C#', 'IOT', 'Hardware'],
@@ -76,9 +76,9 @@ export const PersonalProjects: Project[] = [
     title: 'Website',
     description:
       'My personal website (you are here). Built using Lit, a lightweight web components library.',
-    projectImageAssetPath: '/assets/projects/website.png',
-    projectImageWidth: 1141,
-    projectImageHeight: 679,
+    projectImageBasePath: '/assets/projects/website',
+    projectImageWidth: 1050,
+    projectImageHeight: 625,
     technologies: ['TypeScript', 'Lit', 'Web Components'],
     links: [
       {

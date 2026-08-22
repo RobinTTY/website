@@ -79,7 +79,7 @@ export class HomeRoute extends LitElement {
             html` <project-showcase
               projectTitle=${project.title}
               description=${project.description}
-              projectImageAssetPath=${project.projectImageAssetPath}
+              projectImageBasePath=${project.projectImageBasePath}
               projectImageWidth=${project.projectImageWidth}
               projectImageHeight=${project.projectImageHeight}
               .technologies=${project.technologies}

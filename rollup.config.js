@@ -63,9 +63,15 @@ export default {
     }),
     /** Create and inject a service worker */
     generateSW({
-      // figure-1120.* is only fetched on high-DPI screens, so it is left
-      // out of the precache and served from the network instead.
-      globIgnores: ['polyfills/*.js', 'nomodule-*.js', 'assets/portrait/figure-1120.*'],
+      // Variants only some clients ever fetch stay out of the precache and
+      // come from the network instead: the 2x portrait, and the WebP project
+      // fallbacks that exist for browsers without AVIF.
+      globIgnores: [
+        'polyfills/*.js',
+        'nomodule-*.js',
+        'assets/portrait/figure-1120.*',
+        'assets/projects/*.webp',
+      ],
       navigateFallback: '/index.html',
       // where to output the generated sw
       swDest: path.join('dist', 'sw.js'),
